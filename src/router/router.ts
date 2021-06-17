@@ -1,6 +1,19 @@
 var init = (app: any) => {
     app.get('/', (req: any, res: any) => {
-        res.send('Hello World123sadkfasbv 21 212df!')
+
+        let message = "Chúc bạn một ngày tốt lành!"
+
+        if (req.body.type === "ADDED_TO_SPACE") {
+            if (req.body.space.type === "ROOM") {
+                message = "Xin chào, mọi người cho mình tham gia cùng nào!"
+            } else {
+                message = "Cảm ơn vì đã kết bạn với mình ^_^ Bạn có đang cô đơn không?"
+            }
+        } else if (req.body.type === "MESSAGE") {
+
+        }
+
+        res.json({text: message})
     })
 }
 
