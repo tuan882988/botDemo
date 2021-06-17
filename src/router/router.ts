@@ -1,5 +1,5 @@
 var init = (app: any) => {
-    app.get('/', (req: any, res: any) => {
+    app.get('/', async (req: any, res: any) => {
 
         let message = "Chúc bạn một ngày tốt lành!"
 
@@ -13,7 +13,7 @@ var init = (app: any) => {
 
         }
 
-        res.json({text: message})
+        return res.json({text: message})
     })
 }
 
